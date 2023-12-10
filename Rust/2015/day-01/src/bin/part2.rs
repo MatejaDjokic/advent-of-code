@@ -1,43 +1,41 @@
 fn main() {
-    let input: &str = include_str!("./input1.txt");
-    let output = process(input);
-    dbg!(output);
+    let input: &str = include_str!("./input2.txt");
+    let output: usize = process(input);
+    dbg!("{}", output);
 }
 
-fn process(input: &str) -> i32 {
-    let lines: Vec<&str> = input.lines().collect();
-    let mut numbers: Vec<i32> = vec![];
-    for l in lines {
-        let line = l.trim();
-        let left_number = left_number(line);
-        let right_number = right_number(line);
-        let str = left_number.to_string() + &right_number.to_string();
-        let num: i32 = str.parse().unwrap();
-        numbers.push(num);
+#[derive(Debug)]
+struct State {
+    data: String,
+    floor: i32,
+}
+
+impl State {
+    fn new(data: &str, floor: i32) -> Self {
+        Self {
+            data: data.to_string(),
+            floor: floor,
+        }
     }
-    numbers.iter().sum()
 }
 
-fn left_number(input: &str) -> i32 {
+fn process(input: &str) -> usize {
+    let mut state = State::new("", 0);
+
     for c in input.chars() {
-        if c.is_digit(10) {
-            if let Some(digit) = c.to_digit(10) {
-                return digit as i32;
-            }
+        state.data += &c.to_string();
+        if c == '(' {
+            state.floor += 1;
+        }
+        if c == ')' {
+            state.floor -= 1;
+        }
+        if state.floor == -1 {
+            break;
         }
     }
-    0
-}
 
-fn right_number(input: &str) -> i32 {
-    for c in input.chars().rev() {
-        if c.is_digit(10) {
-            if let Some(digit) = c.to_digit(10) {
-                return digit as i32;
-            }
-        }
-    }
-    0
+    state.data.len()
 }
 
 #[cfg(test)]
@@ -46,12 +44,10 @@ mod tests {
 
     #[test]
     fn test1() {
-        let result = process(
-            "1abc2
-        pqr3stu8vwx
-        a1b2c3d4e5f
-        treb7uchet",
-        );
-        assert_eq!(result, 142);
+        assert_eq!(1, process(")"));
+    }
+    #[test]
+    fn test2() {
+        assert_eq!(5, process("()())"));
     }
 }
