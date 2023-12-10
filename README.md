@@ -1,10 +1,11 @@
 # Advent Of Code  
 My advent of code solutions.
 ## Years
-<details>
+<2023>
 <br>
-This is how you dropdown.
-</details>
+- Day 1
+- Day 2
+</2023>
 [✓] 2023
  - Day 1
  - Day 2
