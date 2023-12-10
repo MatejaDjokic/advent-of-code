@@ -3,8 +3,10 @@ My advent of code solutions.
 ## Years
 <2023>
 <br>
+<summary>
 - Day 1
 - Day 2
+</summary>
 </2023>
 [✓] 2023
  - Day 1
