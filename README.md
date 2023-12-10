@@ -1,30 +1,9 @@
-# Advent Of Code  
-My advent of code solutions.
-## Years
-<2023>
-<br>
-<summary>
-- Day 1
-- Day 2
-</summary>
-</2023>
-[✓] 2023
- - Day 1
- - Day 2
-
-[X] 2022
-
-[X] 2021
-
-[X] 2020
-
-[X] 2019
-
-[X] 2018
-
-[X] 2017
-
-[X] 2016
-
-[✓] 2015
- - Day 1
+<details>
+  <summary>Click to expand/collapse</summary>
+  
+  This is the content that will be hidden or shown.
+  
+  - Item 1
+  - Item 2
+  - Item 3
+</details>
