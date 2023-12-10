@@ -1,6 +1,10 @@
 # Advent Of Code  
 My advent of code solutions.
 ## Years
+<details>
+<br>
+This is how you dropdown.
+</details>
 [✓] 2023
  - Day 1
  - Day 2
