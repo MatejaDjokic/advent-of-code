@@ -8,6 +8,9 @@ rust/2023/day-02/test/
 rust/2023/day-03/target
 rust/2023/day-03/Cargo.lock
 
+rust/2023/day-04/target
+rust/2023/day-04/Cargo.lock
+
 rust/2015/day-01/target
 rust/2015/day-01/Cargo.lock
 
