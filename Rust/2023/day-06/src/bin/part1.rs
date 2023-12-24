@@ -19,15 +19,15 @@ impl Race {
     }
 
     fn get_winnings(&self) -> Vec<(u32, u32)> {
-        let mut distances: Vec<(u32, u32)> = vec![];
+        let mut result: Vec<(u32, u32)> = vec![];
 
         for i in 0..=self.time {
             let remaining_time = self.time - i;
             let distance = remaining_time * i;
-            distances.push((i, distance));
+            result.push((i, distance));
         }
 
-        distances
+        result
             .iter()
             .filter(|d| d.1 > self.max_distance)
             .map(|d| *d)
