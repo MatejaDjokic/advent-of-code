@@ -7,7 +7,7 @@
     <summary>Day 1</summary>
     <ul>
       <li>[x] Part 1</li>
-      <li>[] Part 2</li>
+      <li>[ ] Part 2</li>
     </ul>
   </details>
   <details>
