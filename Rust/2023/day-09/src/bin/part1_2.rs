@@ -25,22 +25,35 @@ fn process(input: &str) -> i128 {
             dataset.push(new_values);
         }
 
-        let sum = dataset
-            .iter()
-            .map(|d1| *d1.last().ok_or(format!("Length: {}", d1.len())).unwrap())
-            .collect::<Vec<_>>()
-            .iter()
-            .fold(0, |u1, u2| u1 + u2);
+        let mut new_dataset = dataset.clone();
 
+        let mut i = new_dataset.len() - 1;
+
+        new_dataset[i].push(0);
+        loop {
+            if i == 0 {
+                break;
+            }
+
+            let nds = new_dataset.clone();
+            let u = nds[i].last().unwrap();
+            let t = nds[i - 1].last().unwrap();
+
+            new_dataset[i - 1].push(u + t);
+
+            i -= 1;
+        }
+
+        printds(&new_dataset);
+
+        let sum = *new_dataset[0].last().unwrap();
         sums.push(sum);
-        // printds(dataset);
-        // println!("{}", sum);
     }
 
     sums.iter().fold(0, |s1, s2| s1 + s2)
 }
 
-fn printds(ds: Vec<Vec<i128>>) {
+fn printds(ds: &Vec<Vec<i128>>) {
     let temp = ds
         .iter()
         .map(|d1| {
@@ -52,7 +65,7 @@ fn printds(ds: Vec<Vec<i128>>) {
         .collect::<Vec<String>>()
         .join("\n");
 
-    println!("{}", temp);
+    println!("{}\n", temp);
 }
 
 #[cfg(test)]
@@ -60,7 +73,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test1() {
+    fn part1_2_test1() {
         let result = process(
             "0 3 6 9 12 15
 1 3 6 10 15 21
