@@ -6,8 +6,6 @@ fn main() {
 
 #[derive(Debug)]
 struct Box {
-    area: usize,
-    slack: usize,
     wrapping_ribbon: usize,
     bow: usize,
 }
@@ -15,8 +13,6 @@ struct Box {
 impl Box {
     fn new(l: usize, w: usize, h: usize) -> Self {
         Self {
-            area: 2 * l * w + 2 * w * h + 2 * h * l,
-            slack: *[l * w, w * h, h * l].iter().min().unwrap(),
             wrapping_ribbon: 2 * *[l + w, w + h, h + l].iter().min().unwrap(),
             bow: l * w * h,
         }
