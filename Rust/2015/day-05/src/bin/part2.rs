@@ -17,8 +17,8 @@ fn two_letter_pair(input: &str) -> (bool, String) {
     let mut out = "".to_string();
     for p1 in pairs.iter() {
         for p2 in pairs.iter() {
-            let (first_pair_index, pair_1st) = p1;
-            let (second_pair_index, pair_2nd) = p2;
+            let (_, pair_1st) = p1;
+            let (_, pair_2nd) = p2;
 
             let (pair_1st_1st, pair_1st_2nd) = (pair_1st[0], pair_1st[1]);
             let (pair_2nd_1st, pair_2nd_2nd) = (pair_2nd[0], pair_2nd[1]);
