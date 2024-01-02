@@ -29,12 +29,12 @@ mod tests {
     use super::*;
 
     #[test]
-    fn part1_test1() {
+    fn part2_test1() {
         let result = process("abcdef");
         assert_eq!(result, 609043);
     }
     #[test]
-    fn part1_test2() {
+    fn part2_test2() {
         let result = process("pqrstuv");
         assert_eq!(result, 1048970);
     }
