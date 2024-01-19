@@ -93,7 +93,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test1() {
+    fn part1_test1() {
         let result = process(
             "London to Dublin = 464
 London to Belfast = 518
